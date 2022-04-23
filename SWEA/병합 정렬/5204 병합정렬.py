@@ -1,12 +1,14 @@
 import sys
+
 sys.stdin = open('input.txt')
+
 
 def merge_sort(lst):
     global cnt
     if len(lst) <= 1:
         return lst
 
-    mid = len(lst)//2  # 병합 정렬을 위해 중앙을 잘라주기
+    mid = len(lst) // 2  # 병합 정렬을 위해 중앙을 잘라주기
     s_lst = merge_sort(lst[:mid])  # 작은 수를 정렬한 리스트
     b_lst = merge_sort(lst[mid:])  # 큰 수를 정렬한 리스트
     # 만약 작은 리스트와 큰 리스트를 다 정렬한 후, 합치기 전 교수님이 주어진 조건이 몇번이나 등장하는지 확인
@@ -27,10 +29,11 @@ def merge_sort(lst):
     merge_lst += b_lst[b:]
     return merge_lst
 
+
 T = int(input())
-for tc in range(1, T+1):
+for tc in range(1, T + 1):
     N = int(input())
-    lst = list(map(int,input().split()))
+    lst = list(map(int, input().split()))
     cnt = 0
     # 출력 : 머지소트함수에서의 중간값과 결과를 출력
     merge_lst = merge_sort(lst)

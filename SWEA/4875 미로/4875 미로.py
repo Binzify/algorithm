@@ -36,8 +36,3 @@ for tc in range(1, T + 1):
     miro(x, y)  # 미로 함수 돌기
 
     print(f'#{tc} {result}')
-
-
-
-
-

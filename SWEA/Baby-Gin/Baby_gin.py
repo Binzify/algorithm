@@ -1,4 +1,5 @@
 import sys
+
 sys.stdin = open('input.txt')
 
 # 베이비 진 확인하기
@@ -8,13 +9,14 @@ def babygin(lst):
             return 1  # 1 반환하여 트루
 
     for i in range(8):  # 0부터 7까지 돌기 (2장씩 추가 확인하므로 인덱스 범위 안벗어나도록 함)
-        if lst[i] and lst[i+1] and lst[i+2]:
+        if lst[i] and lst[i + 1] and lst[i + 2]:
             return 1
     return 0
 
+
 T = int(input())
-for tc in range(1,T+1):
-    cards = list(map(int,input().split()))
+for tc in range(1, T + 1):
+    cards = list(map(int, input().split()))
     # 0~9까지의 숫자에 맞는 인덱스를 추가하기 위해 +1 해줌
     player1 = [0] * 10
     player2 = [0] * 10
@@ -34,4 +36,3 @@ for tc in range(1,T+1):
                 break
 
     print(f'#{tc} {winner}')
-

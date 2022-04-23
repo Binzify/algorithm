@@ -1,4 +1,5 @@
 import sys
+
 sys.stdin = open('input.txt')
 # DFS로 구현
 def dfs(x, y):
@@ -15,16 +16,16 @@ def dfs(x, y):
     visited[x][y] = 1
 
     # 우측과 하단으로만 이동하므로 그에 대한 이동을 표시한다.
-    dfs(x+area[x][y],y)
-    dfs(x, y+area[x][y])
+    dfs(x + area[x][y], y)
+    dfs(x, y + area[x][y])
 
 
 N = int(input())
-area = [list(map(int,input().split())) for _ in range(N)]
-visited = [[0]*N for _ in range(N)]  # 방문 여부 2차원 리스트
+area = [list(map(int, input().split())) for _ in range(N)]
+visited = [[0] * N for _ in range(N)]  # 방문 여부 2차원 리스트
 dfs(0, 0)
 
-if visited[N-1][N-1] == 1:  # 만약 마지막 지점을 방문했다면
+if visited[N - 1][N - 1] == 1:  # 만약 마지막 지점을 방문했다면
     print('HaruHaru')
 else:
     print('Hing')

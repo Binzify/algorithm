@@ -3,6 +3,7 @@ import sys
 sys.stdin = open('sample_input.txt')
 
 from itertools import combinations
+
 # 중복되지 않는 조합 사용
 def change_battery(lst):
     global change
@@ -13,6 +14,7 @@ def change_battery(lst):
             if sum(j) + start == N:
                 change = len(j)
                 return change
+
 
 T = int(input())
 for tc in range(1, T + 1):

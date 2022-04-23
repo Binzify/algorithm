@@ -3,8 +3,8 @@ import sys
 sys.stdin = open('input.txt')
 
 tc = int(input())
-for t in range(1, tc+1):
-    N, K = map(int, input().split())   # N = 배열 가,세 길이 K = 들어갈 단어 길이
+for t in range(1, tc + 1):
+    N, K = map(int, input().split())  # N = 배열 가,세 길이 K = 들어갈 단어 길이
     area = [list(map(int, input().split())) for _ in range(N)]  # NxN의 배열
     result = 0  # K단어가 들어간 칸을 체크할 변수
     # 행 확인하기

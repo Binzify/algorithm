@@ -13,10 +13,12 @@ sys.stdin = open('input.txt')
 def pd(case):
     for r in range(100, 0, -1):  # 100에서 1까지 100번 돌면서 아래에 영향 최종적으로 개수
         for i in range(100):  # 0부터 올라가는 인덱스, 행을 중심으로 0
-            for j in range(100-r+1):  # 100-100+1 > 100-99+1 => 0 > 1 > 2 >....
-                if case[i][j] == case[i][j+r-1]:  # 맨 뒤에랑 비교하는 것 0 과 99 비교하기
-                    rightside = j+r-1
-                    while case[i][j] == case [i][rightside] and j <= rightside:  # 두 문자열이 같고, 왼쪽이 오른쪽을 넘지 않으면
+            for j in range(100 - r + 1):  # 100-100+1 > 100-99+1 => 0 > 1 > 2 >....
+                if case[i][j] == case[i][j + r - 1]:  # 맨 뒤에랑 비교하는 것 0 과 99 비교하기
+                    rightside = j + r - 1
+                    while (
+                        case[i][j] == case[i][rightside] and j <= rightside
+                    ):  # 두 문자열이 같고, 왼쪽이 오른쪽을 넘지 않으면
                         j += 1
                         rightside -= 1
                     if j < rightside:  # 왼쪽이 오른쪽을 넘었다는 것은 회문의 길이가 제일 길다는 의미가 됨
@@ -37,11 +39,7 @@ for _ in range(10):  # 10번의 시도
     max_len = 0  # 최고 구하기 위한 비교
     if p_case > p_case2:
         max_len = p_case
-    else :
+    else:
         max_len = p_case2
 
     print(f'#{tc} {max_len}')
-
-
-
-

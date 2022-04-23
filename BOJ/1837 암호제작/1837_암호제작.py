@@ -1,4 +1,4 @@
-P, K = map(int,input().split())
+P, K = map(int, input().split())
 '''
 에라토스테네스의 체 : 소수 구할 때 손쉽게 찾아내는 방법
 n = int(input())                        # 2부터 n까지의 소수 찾기위해 n 입력
@@ -17,7 +17,7 @@ primes = []
 for i in range(2, K + 1):
     if a[i]:
         primes.append(i)
-        for j in range(2*i, K + 1, i):
+        for j in range(2 * i, K + 1, i):
             a[j] = False
 
 result = 'GOOD'

@@ -1,4 +1,5 @@
 import sys
+
 sys.stdin = open('input.txt')
 
 N, K = map(int, input().split())
@@ -8,7 +9,7 @@ cnt = 0
 
 for i in money:
     if K >= i:
-        cnt += K//i
+        cnt += K // i
         K %= i
 
 print(cnt)

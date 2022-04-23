@@ -1,11 +1,12 @@
 import sys
+
 sys.stdin = open('input.txt')
 
 T = int(input())
-for tc in range(1, T+1):
-    N, M = map(int,input().split())  # 컨테이너 수, 트럭 수
-    containers = list(map(int,input().split()))  # 컨테이너 무게 리스트
-    trucks = list(map(int,input().split()))  # 트럭 적재용량 리스트
+for tc in range(1, T + 1):
+    N, M = map(int, input().split())  # 컨테이너 수, 트럭 수
+    containers = list(map(int, input().split()))  # 컨테이너 무게 리스트
+    trucks = list(map(int, input().split()))  # 트럭 적재용량 리스트
     result = 0  # 최종 운송한 무게의 합 결과값
 
     # 컨테이너와 트럭을 오름차순으로 정렬해 준 다음

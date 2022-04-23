@@ -16,8 +16,9 @@ def check(lst):
             string += 0
     return
 
+
 T = int(input())
-for tc in range(1, T+1):
+for tc in range(1, T + 1):
     math = input().split()  # ['5', '3', '*', '+', '.']
     stack = []
     number = 0  # 숫자를 셀 것
@@ -63,6 +64,3 @@ for tc in range(1, T+1):
         print(f'#{tc} {result}')
     else:
         print(f'#{tc} error')
-
-
-

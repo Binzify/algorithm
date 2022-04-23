@@ -2,7 +2,7 @@ sugar = int(input())
 move = 0
 
 while sugar >= 0:
-    if sugar % 5 == 0 :
+    if sugar % 5 == 0:
         move += sugar // 5
         print(move)
         break

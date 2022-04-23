@@ -11,13 +11,14 @@ def bubble(lst):
                 lst[j], lst[j + 1] = lst[j + 1], lst[j]
     return lst
 
-n, m = map(int,input().split())
-row = [0,n]
-col = [0,m]
+
+n, m = map(int, input().split())
+row = [0, n]
+col = [0, m]
 
 cut = int(input())
 for _ in range(cut):
-    arrow, num = map(int,input().split())
+    arrow, num = map(int, input().split())
     if arrow == 0:
         col.append(num)
     else:
@@ -28,16 +29,16 @@ bubble(col)
 
 cutrow = []
 cutcol = []
-for i in range(len(row)-1):
-    cutrow.append(row[i+1]-row[i])
-for i in range(len(col)-1):
-    cutcol.append(col[i+1]-col[i])
+for i in range(len(row) - 1):
+    cutrow.append(row[i + 1] - row[i])
+for i in range(len(col) - 1):
+    cutcol.append(col[i + 1] - col[i])
 
 bestpiece = 0
 for a in cutrow:
     for b in cutcol:
-        if bestpiece < a*b:
-            bestpiece = a*b
+        if bestpiece < a * b:
+            bestpiece = a * b
 # 최종적으로 가장 큰수들끼리 곱하면 된다.
 print(bestpiece)
 
@@ -68,4 +69,3 @@ for i in range(len(col)-1):  # 큰수 - 작은수 = 잘려진 조각의 세로 �
 # 최종적으로 가장 큰수들끼리 곱하면 된다.
 print(max(cutrow)*max(cutcol))
 '''
-

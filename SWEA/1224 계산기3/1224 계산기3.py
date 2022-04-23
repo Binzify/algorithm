@@ -28,4 +28,3 @@ for tc in range(1, 11):
                     stack.append(p2 * p1)
 
     print(f'#{tc} {result}')
-

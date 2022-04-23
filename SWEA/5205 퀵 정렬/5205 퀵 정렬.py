@@ -1,5 +1,7 @@
 import sys
+
 sys.stdin = open('sample_input.txt')
+
 
 def quick_sort(lst):
     if len(lst) <= 1:  # 만약에 리스트가 하나 또는 그 이하의 원소만 갖게 된다면 (본인만 포함된 것이므로) 종료
@@ -19,8 +21,8 @@ def quick_sort(lst):
 
 
 T = int(input())
-for tc in range(1, T+1):
+for tc in range(1, T + 1):
     N = int(input())
-    arr = list(map(int,input().split()))
+    arr = list(map(int, input().split()))
 
     print(f'#{tc} {quick_sort(arr)[N//2]}')

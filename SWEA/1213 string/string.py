@@ -1,4 +1,5 @@
 import sys
+
 sys.stdin = open('test_input.txt', encoding='utf-8')
 
 for tc in range(10):

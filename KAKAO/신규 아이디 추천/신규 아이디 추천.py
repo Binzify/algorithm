@@ -15,12 +15,12 @@ def solution(new_id):
     # 3단계 . 중복 없애기
     # 가장 먼저 찾아서 나오는 . 의 인덱스
     while '..' in answer:
-            answer = answer.replace('..', '.')
+        answer = answer.replace('..', '.')
 
     # 리스트에 담아서 나머지 처리해주기
     for i in answer:
         second_id += [i]
-    answer =''
+    answer = ''
 
     # 4단계 처음 또는 끝
     if second_id[0] == '.':

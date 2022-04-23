@@ -2,6 +2,7 @@ from itertools import permutations
 
 numbers = "011"
 
+
 def solution(numbers):
     # 에라토스테네스의 체
     n = 10 ** len(numbers)
@@ -16,7 +17,7 @@ def solution(numbers):
 
     answer = 0
     make_numbers = []
-    for i in range(1, len(numbers)+1):
+    for i in range(1, len(numbers) + 1):
         make_number = list(permutations(numbers, i))  # [('1',), ('7',)]
         for num in make_number:
             make_numbers.append(int(''.join(num)))
@@ -24,5 +25,6 @@ def solution(numbers):
         if number in primes:
             answer += 1
     return answer
+
 
 print(solution(numbers))

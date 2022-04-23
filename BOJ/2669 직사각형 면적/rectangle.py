@@ -1,8 +1,9 @@
 import sys
+
 sys.stdin = open('input.txt')
 
 # 100 * 100 짜리의 도화지 생성 [0]*100개 * 100번
-area = [[0]*100 for _ in range(100)]
+area = [[0] * 100 for _ in range(100)]
 
 for _ in range(4):  # 주어지는 값을 각 좌표 시작, 끝 지점으로 받아내기
     x1, y1, x2, y2 = map(int, input().split())

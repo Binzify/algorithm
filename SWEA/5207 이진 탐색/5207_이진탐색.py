@@ -1,10 +1,12 @@
 import sys
+
 sys.stdin = open('input.txt')
+
 
 def binary_search(n):
     global cnt
     start = 0  # A 리스트 첫번째 인덱스 번호
-    end = N-1  # 리스트 A 길이의 -1 : 마지막 인덱스번호
+    end = N - 1  # 리스트 A 길이의 -1 : 마지막 인덱스번호
     move = 0  # 이미 이동했는지 확인하기 -1 : 왼쪽이동 / 1 : 오른쪽 이동
 
     while start <= end:
@@ -18,22 +20,22 @@ def binary_search(n):
                 break
             else:
                 move = -1
-                end = mid-1
-        else: # 반대로 오른쪽도 동일하게 해줌
+                end = mid - 1
+        else:  # 반대로 오른쪽도 동일하게 해줌
             if move == 1:
                 break
             else:
                 move = 1  # 오른쪽 이동 표시하기
-                start = mid+1 # 반대라면 첫 시작지점을 중앙 다음칸으로 이동
+                start = mid + 1  # 반대라면 첫 시작지점을 중앙 다음칸으로 이동
 
     return cnt
 
 
 T = int(input())
-for tc in range(1, T+1):
-    N, M = map(int,input().split())
-    A = list(map(int,input().split()))
-    B = list(map(int,input().split()))
+for tc in range(1, T + 1):
+    N, M = map(int, input().split())
+    A = list(map(int, input().split()))
+    B = list(map(int, input().split()))
     cnt = 0
     # 정렬한 상태로 A를 저장하기
     A.sort()

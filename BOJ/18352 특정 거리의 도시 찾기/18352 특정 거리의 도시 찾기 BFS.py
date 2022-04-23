@@ -1,7 +1,9 @@
 import sys
+
 sys.stdin = open('input.txt')
 
 from collections import deque
+
 
 def bfs(s):
     global answer
@@ -16,17 +18,18 @@ def bfs(s):
             for i in cities[city]:
                 if visited[i] == 0:
                     visited[i] = 1
-                    q.append((i, cnt+1))
+                    q.append((i, cnt + 1))
 
-n, m, k, x = map(int,input().split())
-N = n+1
+
+n, m, k, x = map(int, input().split())
+N = n + 1
 # 단방향 그래프 생성하기
 cities = [[] for _ in range(N)]
 visited = [0] * N  # 방문 체크
 answer = []  # 해당하는 도시 집어넣기
 
 for _ in range(m):
-    a, b = map(int,input().split())
+    a, b = map(int, input().split())
     cities[a].append(b)
 
 bfs(x)

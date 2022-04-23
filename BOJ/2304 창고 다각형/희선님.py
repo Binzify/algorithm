@@ -44,7 +44,7 @@ total += L_H_list[max_seq][1] * 1
 # 3. 최대 높이 후(뒤부터 검사) -> 높이가 이전값보다 크면 높이 변경, 작으면 그대로
 now_H = L_H_list[-1][1]
 for j in range(N - 1, max_seq, -1):
-    total += now_H * (L_H_list[j][0] - L_H_list[j - 1][0])   # y값 * x값
+    total += now_H * (L_H_list[j][0] - L_H_list[j - 1][0])  # y값 * x값
     if L_H_list[j][1] < L_H_list[j - 1][1]:  # 값이 커지면 현재 높이 변경
         now_H = L_H_list[j - 1][1]
 

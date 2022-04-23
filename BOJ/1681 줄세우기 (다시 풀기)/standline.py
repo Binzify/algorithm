@@ -1,4 +1,5 @@
 import sys
+
 sys.stdin = open('input.txt')
 
 n, l = map(int, input().split())

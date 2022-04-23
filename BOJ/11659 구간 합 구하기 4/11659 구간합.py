@@ -31,5 +31,5 @@ for k in lst:  # 구간합을 더하기
 
 for _ in range(M):
     i, j = map(int, sys.stdin.readline().split())  # 빠르게 변수를 받아주기
-    if i-1 >= 0 and j <= len(sum_lst):  # 인덱스 범위 설정
-        print(sum_lst[j] - sum_lst[i-1])
+    if i - 1 >= 0 and j <= len(sum_lst):  # 인덱스 범위 설정
+        print(sum_lst[j] - sum_lst[i - 1])

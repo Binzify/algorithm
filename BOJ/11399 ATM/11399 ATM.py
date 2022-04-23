@@ -1,4 +1,5 @@
 import sys
+
 sys.stdin = open('input.txt')
 
 N = int(input())
@@ -9,5 +10,5 @@ for i in line:
     if not atm:
         atm.append(i)
     else:
-        atm.append(i+atm[-1])
+        atm.append(i + atm[-1])
 print(sum(atm))

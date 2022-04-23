@@ -14,11 +14,11 @@ def in_order(v):
         in_order(ch2[v])
 
 
-for tc in range(1,11):
+for tc in range(1, 11):
     v = int(input())  # 정점의 개수
-    letters = [0] * (v+1)
-    ch1 = [0] * (v+1)  # 왼쪽 자식
-    ch2 = [0] * (v+1)  # 오른쪽 자식
+    letters = [0] * (v + 1)
+    ch1 = [0] * (v + 1)  # 왼쪽 자식
+    ch2 = [0] * (v + 1)  # 오른쪽 자식
     result = ''
 
     for i in range(v):

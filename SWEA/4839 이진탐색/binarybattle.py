@@ -2,7 +2,7 @@ import sys
 
 sys.stdin = open('2gin.txt')
 
-tc = int (input())
+tc = int(input())
 
 # 이진탐색 함수 정의
 def binary_search(P, target):  # 찾으려는 범위, 찾고자 하는 페이지 수
@@ -23,7 +23,8 @@ def binary_search(P, target):  # 찾으려는 범위, 찾고자 하는 페이지
                 start = mid  # 찾는 값보다 기준이 크면 시작 페이지 기준을 중앙값으로 설정
     return cnt  # 최종 펼쳐본 횟수를 출력한다.
 
-for t in range(1, tc+1):
+
+for t in range(1, tc + 1):
     P, Pa, Pb = map(int, input().split())
 
     # 각 함수 적용시키기
@@ -31,9 +32,9 @@ for t in range(1, tc+1):
     B = binary_search(P, Pb)
 
     #  책을 펼친 횟수가 적은 사람을 찾아낸다.
-    if A > B :
+    if A > B:
         print(f'#{t} B')
-    elif A < B :
+    elif A < B:
         print(f'#{t} A')
     else:
         print(f'#{t} 0')

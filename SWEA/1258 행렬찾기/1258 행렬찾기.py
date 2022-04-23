@@ -18,19 +18,17 @@ def rowcol(lst):
     for i in range(n):
         for j in range(n):
             if lst[i][j] == 0:
-                rowlist += [cnt+1]  # 행을 검사했을 때 0이 나오면 사각형의 총 크기가 끝이 난 것이므로 저장
+                rowlist += [cnt + 1]  # 행을 검사했을 때 0이 나오면 사각형의 총 크기가 끝이 난 것이므로 저장
             else:
                 cnt += 1
 
 
-
 T = int(input())
-for tc in range(1, T+1):
+for tc in range(1, T + 1):
     n = int(input())
     container = [list(map(int, input().split())) for _ in range(n)]
     rowlist = []  # 행의 길이를 담을 리스트
     collist = []  # 열의 길이를 담을 리스트
     rowcol = []  # 최종적으로 행과 열의 묶음을 담을 리스트 (최종출력)
-
 
     print(f'#{tc}', *rowcol)

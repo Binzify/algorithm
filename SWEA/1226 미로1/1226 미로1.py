@@ -5,6 +5,7 @@ sys.stdin = open('input.txt')
 
 from collections import deque
 
+
 def bfs(x, y):
     queue = deque()
     queue.append((x, y))  # 튜플로 위치 저장하기
@@ -28,17 +29,16 @@ def bfs(x, y):
     return 0
 
 
-
 for _ in range(1, 11):
     tc = int(input())
     graph = []
     x = y = 1
     for i in range(16):
-        graph.append(list(map(int,input())))
+        graph.append(list(map(int, input())))
 
     # 델타 이동 ( 상 하 좌 우)
     dx = [-1, 1, 0, 0]
     dy = [0, 0, -1, 1]
-    
+
     # 출력하기
-    print(f'#{tc}', bfs(x,y))
+    print(f'#{tc}', bfs(x, y))

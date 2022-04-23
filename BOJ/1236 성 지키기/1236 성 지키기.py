@@ -3,11 +3,11 @@ import sys
 
 sys.stdin = open('input.txt')
 
-n, m = map(int,input().split())
+n, m = map(int, input().split())
 castle = [list(input()) for _ in range(n)]
 
 cnt = 0  # 행 기준
-colcnt = 0 # 열 기준
+colcnt = 0  # 열 기준
 # 행 기준으로 찾기
 for i in range(n):
     hall = 0
@@ -18,7 +18,7 @@ for i in range(n):
             hall += 1
     if hall == 0:
         cnt += 1
-        
+
 # 열로 돌리기
 for i in range(m):
     hall = 0

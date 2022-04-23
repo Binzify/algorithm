@@ -1,5 +1,7 @@
 import sys
+
 sys.stdin = open('input.txt')
+
 
 def DFS(s):
     global cnt
@@ -12,12 +14,12 @@ def DFS(s):
 
 computer = int(input())
 node = int(input())
-connect = [[]*computer for _ in range(computer+1)]  # 인접행렬 만들기 위한 리스트
-v = [0]*(computer+1)
+connect = [[] * computer for _ in range(computer + 1)]  # 인접행렬 만들기 위한 리스트
+v = [0] * (computer + 1)
 cnt = 0
 
 for _ in range(node):
-    p, c = map(int,input().split())
+    p, c = map(int, input().split())
     connect[p].append(c)
     connect[c].append(p)
 

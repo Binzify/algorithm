@@ -8,6 +8,6 @@ for i in range(1, 10001):  # 1부터 10000까지의 숫자를 돌려서
 
 # set 집합끼리 뺀 후 오름차순으로 정렬
 # list와 다르게 집합.sort() 는 안되고 sorted()를 써야함
-answer = sorted(numbers-new_num)
+answer = sorted(numbers - new_num)
 for i in answer:
     print(i)

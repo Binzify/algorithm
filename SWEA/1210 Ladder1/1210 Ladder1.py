@@ -1,9 +1,12 @@
 import sys
+
 sys.stdin = open('input.txt')
 
 for tc in range(10):
     t = int(input())  # t : 테스트 케이스 번호
-    lad = [list(map(int, input().split())) for _ in range(100)]  # 리스트 형식으로 100번의 포문을 돌려서 사다리 생성
+    lad = [
+        list(map(int, input().split())) for _ in range(100)
+    ]  # 리스트 형식으로 100번의 포문을 돌려서 사다리 생성
 
     # 이동하면서 지나간 자리에 흔적을 남긴다 (-1로 0을 만들거나, 2을 더해 3을 만든다)
     # 델타 이동 (0 상,1 좌,2 우)
@@ -21,11 +24,11 @@ for tc in range(10):
             x = x + dx[0]
             y = i + dy[0]
             lad[x][y] = 0  # 올라간 곳의 위치를 0으로 만든다.
-            while x != 0 : # 반복 0이 아닐때까지, 즉 위로 올라갔을 때 1이 계속 있으면 실행한다.
-                if y+1 < 100 and lad[x][y+1] == 1 :  # 만약 우측이 1이라면 오른쪽 이동/바깥을 벗어나지 않고
+            while x != 0:  # 반복 0이 아닐때까지, 즉 위로 올라갔을 때 1이 계속 있으면 실행한다.
+                if y + 1 < 100 and lad[x][y + 1] == 1:  # 만약 우측이 1이라면 오른쪽 이동/바깥을 벗어나지 않고
                     x = x + dx[2]
                     y = y + dy[2]
-                elif y-1 > 0 and lad[x][y-1] == 1 :  # 만약 좌측이 1이라면 옆으로 이동하도록 한다.
+                elif y - 1 > 0 and lad[x][y - 1] == 1:  # 만약 좌측이 1이라면 옆으로 이동하도록 한다.
                     x = x + dx[1]
                     y = y + dy[1]
                 else:  # 그것도 아니라면 위로 이동하도록 한다.

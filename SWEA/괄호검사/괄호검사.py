@@ -3,6 +3,7 @@ import sys
 
 sys.stdin = open('sample_input.txt')
 
+
 def check(lst):
     stack = []  # 여는 괄호를 넣을 스택
     for i in lst:
@@ -16,7 +17,7 @@ def check(lst):
                     stack.pop(-1)
                 else:
                     return 0
-            elif i == '}': # 닫는 괄호가 } 이면 스택 마지막이 { 인지 확인해서 없애기
+            elif i == '}':  # 닫는 괄호가 } 이면 스택 마지막이 { 인지 확인해서 없애기
                 if stack[-1] == '{':
                     stack.pop(-1)
                 else:
@@ -25,7 +26,8 @@ def check(lst):
         return 0  # 짝이 안맞으므로 0 출력
     return 1  # 그렇지 않으면 True
 
+
 tc = int(input())
-for t in range(1, tc+1):
+for t in range(1, tc + 1):
     stc = list(input())
     print(f'#{t} {check(stc)}')

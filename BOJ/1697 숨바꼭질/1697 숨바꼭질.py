@@ -1,5 +1,7 @@
 import sys
+
 sys.stdin = open('input.txt')
+
 
 def bfs(N, K):
     q = [N]
@@ -13,7 +15,7 @@ def bfs(N, K):
                 visited[move_subin] = visited[subin] + 1  # 수빈이가 이동했던 횟수 + 1을 새로 저장
                 q.append(move_subin)  # 새롭게 수빈이를 이동시켜주자
 
-N, K = map(int,input().split())  # 수빈 / 동생 위치
+
+N, K = map(int, input().split())  # 수빈 / 동생 위치
 visited = [0] * 100001  # 최대 100000만까지 이동할 수 있으므로
 bfs(N, K)
-

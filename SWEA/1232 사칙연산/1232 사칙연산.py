@@ -22,7 +22,9 @@ def post_order(node):
 
 for tc in range(1, 11):
     N = int(input())
-    problem = [input().split() for _ in range(N)]  # [['1', '-', '2', '3'], ['2', '-', '4', '5'], ['3', '10'], ['4', '88'], ['5', '65']]
+    problem = [
+        input().split() for _ in range(N)
+    ]  # [['1', '-', '2', '3'], ['2', '-', '4', '5'], ['3', '10'], ['4', '88'], ['5', '65']]
 
     for susik in problem:
         i = 0

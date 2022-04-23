@@ -1,3 +1,3 @@
 import sys
-sys.stdin = open('input.txt')
 
+sys.stdin = open('input.txt')

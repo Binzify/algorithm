@@ -1,17 +1,22 @@
 import sys
+
 sys.stdin = open('input.txt')
 
 T = int(input())
-for tc in range(1, T+1):
+for tc in range(1, T + 1):
     N = int(input())
     work_list = []  # 작업 예약 목록
 
     for _ in range(N):
-        s, e = map(int,input().split())
-        work_list.append((s, e))  # 작업 예약 목록 [(20, 23), (17, 20), (23, 24), (4, 14), (8, 18)]
+        s, e = map(int, input().split())
+        work_list.append(
+            (s, e)
+        )  # 작업 예약 목록 [(20, 23), (17, 20), (23, 24), (4, 14), (8, 18)]
 
     # 끝나는 시간을 기준으로 내림차순 정렬하기
-    work_list.sort(key=lambda x:x[1], reverse=True)  # [(23, 24), (20, 23), (17, 20), (8, 18), (4, 14)]
+    work_list.sort(
+        key=lambda x: x[1], reverse=True
+    )  # [(23, 24), (20, 23), (17, 20), (8, 18), (4, 14)]
 
     # 첫 작업 시간 중 가장 빠른 사람의 시간을 기준으로 삼고 돌면서 작업 횟수 세기
     last_time = work_list[-1][1]  # 14

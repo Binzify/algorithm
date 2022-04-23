@@ -1,4 +1,5 @@
 import sys
+
 sys.stdin = open('elec_input.txt')
 
 # 1. 버스는 첫 출발시에 충전이 되어있으므로 K만큼 이동할 수 있다.

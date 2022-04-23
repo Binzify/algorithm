@@ -20,25 +20,24 @@ sys.stdin = open('input.txt')
 #     return max_multiply
 
 T = int(input())
-for tc in range(1, T+1):
+for tc in range(1, T + 1):
     N, M = map(int, input().split())  # N = a의 길이 M = b의 길이
     a = list(map(int, input().split()))
     b = list(map(int, input().split()))
     max_multiply = 0  # 최대 곱셈
 
-
     if len(a) > len(b):  # 만약 a가 b보다 길다면
-        for i in range(N-M+1):  # 0 1 2  짧은게 긴거 안에서 도는 횟수
+        for i in range(N - M + 1):  # 0 1 2  짧은게 긴거 안에서 도는 횟수
             multiply = 0  # 곱한 값을 저장하는 공간
             for j in range(M):  # 0 1 2  # 짧은 리스트에서 곱하는 횟수
-                multiply += a[i+j]*b[j]  # 인덱스로 빼서 곱함
+                multiply += a[i + j] * b[j]  # 인덱스로 빼서 곱함
             if max_multiply < multiply:  # 곱한 값이 최대이면 저장
                 max_multiply = multiply
     else:  # 위와 반대 경우! b가 a 보다 긴 경우
-        for i in range(M-N+1):
+        for i in range(M - N + 1):
             multiply = 0
             for j in range(N):
-                multiply += b[i+j]*a[j]
+                multiply += b[i + j] * a[j]
             if max_multiply < multiply:
                 max_multiply = multiply
 

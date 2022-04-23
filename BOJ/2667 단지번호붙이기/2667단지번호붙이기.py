@@ -5,6 +5,7 @@ sys.stdin = open('input.txt')
 
 from collections import deque
 
+
 def bfs(x, y):
     global town
     cnt = 1  # 집 몇 채인지 세기
@@ -14,9 +15,11 @@ def bfs(x, y):
     while q:
         gx, gy = q.popleft()  # 꺼낸 x, y 를 가지고
         for i in range(4):
-            nx = gx+dx[i]  # 방향을 탐색하면서 집 찾아보기
-            ny = gy+dy[i]
-            if 0 <= nx < N and 0 <= ny < N and village[nx][ny] == '1':  # 인덱스 범위 벗어나지 않고 집이 있다면
+            nx = gx + dx[i]  # 방향을 탐색하면서 집 찾아보기
+            ny = gy + dy[i]
+            if (
+                0 <= nx < N and 0 <= ny < N and village[nx][ny] == '1'
+            ):  # 인덱스 범위 벗어나지 않고 집이 있다면
                 cnt += 1  # 집 수 세기
                 village[nx][ny] = '0'  # 집 방문표시 하기
                 q.append((nx, ny))  # 다시 큐에다가 집어넣기

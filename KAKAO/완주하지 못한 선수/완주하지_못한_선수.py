@@ -1,6 +1,7 @@
 participant = ["mislav", "stanko", "mislav", "ana"]
 completion = ["stanko", "ana", "mislav"]
 
+
 def solution(participant, completion):
     participant.sort()
     completion.sort()
@@ -9,5 +10,6 @@ def solution(participant, completion):
         if participant[i] != completion[i]:
             return participant[i]
     return participant[-1]  # 다 돌았는데도 답이 안나오면 참여자의 맨 마지막 사람 정답
+
 
 print(solution(participant, completion))

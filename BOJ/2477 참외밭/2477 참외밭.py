@@ -1,4 +1,5 @@
 import sys
+
 sys.stdin = open('input.txt')
 
 K = int(input())
@@ -20,8 +21,12 @@ for i in range(6):
             max_height_index = i  # 그에 해당하는 인덱스를 저장
 
 # 그 후 가장 긴 가로 및 세로와 인접한 변 2개와 가장긴 가로와 세로 총 4개를 새로운 리스트에 저장한다.
-index_list = [info[max_height_index - 1], info[(max_height_index + 1) % 6], info[max_width_index - 1],
-              info[(max_width_index + 1) % 6]]
+index_list = [
+    info[max_height_index - 1],
+    info[(max_height_index + 1) % 6],
+    info[max_width_index - 1],
+    info[(max_width_index + 1) % 6],
+]
 
 product = 1  # 곱을 저장할 변수
 for i in info:  # 입력받은 변들 중에

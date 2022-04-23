@@ -5,7 +5,7 @@ sys.stdin = open('sample_input.txt')
 
 
 T = int(input())
-for tc in range(1, T+1):
+for tc in range(1, T + 1):
     chars = input().split()  # ['5', '3', '*', '+', '.']
     result = ''
     stack = []
@@ -48,4 +48,3 @@ for tc in range(1, T+1):
                         stack.append(p2 // p1)
 
     print(f'#{tc} {result}')
-

@@ -12,12 +12,12 @@ sys.stdin = open('sample_input.txt')
 
 case = [1, 3]  #  10일때, 20일때 경우의 수를 미리 스택에 저장해둔다.
 tc = int(input())
-for t in range(1, tc+1):
+for t in range(1, tc + 1):
     N = int(input())
-    n = N//10
+    n = N // 10
 
     # 주어진 길이의 경우의 수가 나올 때까지 돌려야 한다.
-    while len(case) != n :
-        case.append(case[-1] + case[-2]*2)
+    while len(case) != n:
+        case.append(case[-1] + case[-2] * 2)
 
     print(f'#{t} {case[n-1]}')

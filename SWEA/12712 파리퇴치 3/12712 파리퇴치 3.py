@@ -5,8 +5,8 @@ sys.stdin = open('in1.txt')
 
 
 T = int(input())
-for tc in range(1, T+1):
-    N, M = map(int,input().split())
+for tc in range(1, T + 1):
+    N, M = map(int, input().split())
     arr = [list(map(int, input().split())) for _ in range(N)]
     maxkill = 0
 
@@ -27,8 +27,8 @@ for tc in range(1, T+1):
             if maxkill < k:  # 최대값 확인하기
                 maxkill = k
             # 대각선 방향의 델타
-            di = [1,1,-1,-1]
-            dj = [1,-1,1,-1]
+            di = [1, 1, -1, -1]
+            dj = [1, -1, 1, -1]
             k = arr[i][j]
             for a in range(4):  # 델타 방향 순회
                 for b in range(1, M):

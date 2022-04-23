@@ -8,7 +8,7 @@ def exchange(stop):  # 정류장 시작점 받기
     # 만약 정류장의 위치가 배터리 리스트 길이보다 크거나 같다면 (도착했다면)
     if stop >= len(battery):
         if tmp <= change_cnt:  # 기존 최소 교체횟수보다 더 적은 경우가 있다면
-            change_cnt = tmp   # 최솟값을 변경해준다.
+            change_cnt = tmp  # 최솟값을 변경해준다.
         return
 
     # 확인할 필요 없이 기존 설정되어있던 최소 교체값이 더 작은거라면, 그냥 종료
@@ -20,6 +20,7 @@ def exchange(stop):  # 정류장 시작점 받기
         tmp += 1  # 임시로 교체 횟수를 세는 변수의 값을 하나씩 늘려주고
         exchange(i)  # 계속 재귀로 돌아보면서 위에 조건에 걸리는지 확인한다.
         tmp -= 1  # 돌아오면 해당 경우가 아니므로 교체 횟수를 다시 원상복귀한다.
+
 
 T = int(input())
 for tc in range(1, T + 1):
