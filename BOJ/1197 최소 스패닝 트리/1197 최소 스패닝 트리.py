@@ -1,6 +1,3 @@
-# 다시 문제 풀기 (pypyp로 돌리면 틀렸습니다 뜨고 ... python3으로 돌리면 시간초과 뜸)
-
-from heapq import heappush
 import sys
 sys.stdin = open('input.txt')
 input = sys.stdin.readline
@@ -15,24 +12,23 @@ def find_set(x):
 
 V, E = map(int,input().split())
 tree = []
+p = [i for i in range(V + 1)]  # 대표 원소 초기화시키기
 
 for _ in range(E):
     a, b, c = map(int,input().split())
-    heappush(tree, (c,a,b))
-
-p = [i for i in range(V + 1)]  # 대표원소 초기화
-
-# N개의 정점이 있으면 사이클이 생기지 않도록 N-1개의 간선을 선택
+    tree.append([a,b,c])
+# 가중치 기준으로 정렬하기
+tree.sort(key=lambda x: x[2])
 # MST에 포함된 간선의 가중치의 합 구하기
-N = V + 1  # 0~V번 까지의 정점
-cnt = 0
 total = 0  # 가중치의 합
 
-for w, u, v in tree:  # N-1개의 간선 선택 루프
-    if find_set(u) != find_set(v):  # 사이클을 형성하지 않으면 선택
-        cnt += 1
-        total += w  # 가중치의 합
-        p[find_set(v)] = find_set(u)  # v의 대표원소를 u의 대표원소로 바꿈
-        if cnt == N - 1:
-            break
+for s, e, w in tree:  # 가중치, 시작, 끝노드
+    start_root = find_set(s)
+    end_root = find_set(e)
+    if start_root != end_root:
+        if start_root > end_root:
+            p[start_root] = end_root
+        else:
+            p[end_root] = start_root
+        total += w
 print(total)
